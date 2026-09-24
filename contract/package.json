@@ -1,0 +1,13 @@
+{
+  "name": "ecom-api-docs-contract",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Runs the Ecom apps against a throwaway MongoDB and checks the OpenAPI specification against their real behavior",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "mongodb-memory-server": "10.4.3"
+  }
+}

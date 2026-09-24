@@ -1,0 +1,36 @@
+{
+  "name": "ecom-api-docs",
+  "version": "1.0.0",
+  "description": "OpenAPI/Swagger docs for the Ecom web app and FileManager microservice",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thaihadefi/ecom-api-docs.git"
+  },
+  "homepage": "https://ecom-api-docs.vercel.app",
+  "bugs": {
+    "url": "https://github.com/thaihadefi/ecom-api-docs/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node scripts/build.js",
+    "validate": "node scripts/build.js --validate",
+    "sync-web": "node scripts/build.js --copy-to ../Ecom/Web/public/api-docs",
+    "start": "serve . -l 8080",
+    "verify": "node audit/run.js",
+    "sync-statuses": "node audit/sync-statuses.js",
+    "contract:setup": "yarn --cwd contract install --frozen-lockfile && python3 -m venv contract/.venv && contract/.venv/bin/pip install --quiet -r contract/requirements.txt",
+    "contract:status": "node contract/status-codes.js",
+    "contract": "node contract/run.js"
+  },
+  "devDependencies": {
+    "@apidevtools/swagger-parser": "^10.1.1",
+    "js-yaml": "^4.1.0",
+    "openapi-types": "^12.1.3",
+    "serve": "14.2.6",
+    "swagger-ui-dist": "5.18.2"
+  }
+}

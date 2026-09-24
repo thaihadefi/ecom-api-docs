@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+contract/node_modules/
+contract/.venv/
+contract/reports/
+contract/.hypothesis/
+.vercel

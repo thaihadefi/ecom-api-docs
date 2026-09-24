@@ -1,0 +1,504 @@
+html {
+  box-sizing: border-box;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background-color: #fafafa;
+  color: #1e293b;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.custom-header {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #f8fafc;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.custom-header h1 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.custom-header .badge {
+  background: #3b82f6;
+  color: #ffffff;
+  font-size: 11px;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+}
+
+.custom-header .links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.custom-header .links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.custom-header .links a:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+.custom-header .links a:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+}
+
+.swagger-ui {
+  color: #334155;
+}
+
+.swagger-ui .wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.swagger-ui .info {
+  margin: 28px 0 24px 0;
+}
+
+.swagger-ui .info .title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  word-break: break-word;
+}
+
+.swagger-ui .info .description {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #334155;
+}
+
+.swagger-ui .info pre,
+.swagger-ui .info code {
+  background: #e2e8f0;
+  color: #0f172a;
+  border-radius: 4px;
+}
+
+.swagger-ui .info code {
+  padding: 2px 6px;
+  font-size: 13px;
+}
+
+/* The version and OAS badges next to the title are <pre> elements too; keep them out of the code-block style above. */
+.swagger-ui .info .title small pre {
+  background: transparent;
+  border-radius: 0;
+  color: #fff;
+}
+
+/* The specification defines no OpenAPI links, so the empty "Links" column is hidden. */
+.swagger-ui .response-col_links {
+  display: none !important;
+}
+
+.swagger-ui .filter-container {
+  padding: 14px 0;
+  margin-bottom: 8px;
+}
+
+.swagger-ui .filter-container .operation-filter-input {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  padding: 10px 14px;
+  font-size: 14px;
+  background-color: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.swagger-ui .filter-container .operation-filter-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.swagger-ui .opblock-tag {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0f172a;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 16px 0 10px 0;
+}
+
+.swagger-ui .opblock-tag small {
+  color: #64748b;
+  font-size: 13.5px;
+  font-weight: normal;
+  display: block;
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+.swagger-ui .opblock {
+  border-radius: 8px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.swagger-ui .opblock .opblock-summary {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 10px 14px;
+}
+
+.swagger-ui .opblock .opblock-summary-method {
+  min-width: 78px;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 10px;
+}
+
+.swagger-ui .opblock .opblock-summary-path,
+.swagger-ui .opblock .opblock-summary-path__deprecated {
+  font-size: 14px;
+  font-weight: 600;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+}
+
+.swagger-ui .opblock .opblock-summary-description {
+  font-size: 13px;
+  color: #64748b;
+  word-break: break-word;
+  flex: 1 1 220px;
+}
+
+.swagger-ui table {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.swagger-ui .table-container,
+.swagger-ui .responses-table,
+.swagger-ui .parameters-table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.swagger-ui .opblock-body pre,
+.swagger-ui .opblock-body pre.microlight,
+.swagger-ui .highlight-code,
+.swagger-ui .example,
+.swagger-ui .model-box {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 6px;
+}
+
+.swagger-ui input[type=text],
+.swagger-ui input[type=password],
+.swagger-ui input[type=search],
+.swagger-ui input[type=email],
+.swagger-ui input[type=file],
+.swagger-ui textarea,
+.swagger-ui select {
+  max-width: 100% !important;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+.swagger-ui .parameters-col_description input[type=text],
+.swagger-ui .body-param__text {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.swagger-ui section.models {
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.swagger-ui section.models .model-container {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.swagger-ui pre::-webkit-scrollbar,
+.swagger-ui .table-container::-webkit-scrollbar,
+.swagger-ui .responses-table::-webkit-scrollbar,
+.swagger-ui .parameters-table::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.swagger-ui pre::-webkit-scrollbar-thumb,
+.swagger-ui .table-container::-webkit-scrollbar-thumb,
+.swagger-ui .responses-table::-webkit-scrollbar-thumb,
+.swagger-ui .parameters-table::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 3px;
+}
+
+@media (max-width: 1199.98px) {
+  .custom-header {
+    padding: 15px 24px;
+  }
+
+  .swagger-ui .wrapper {
+    max-width: 1140px;
+    padding: 0 20px;
+  }
+
+  .swagger-ui .info .title {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .custom-header {
+    padding: 14px 20px;
+  }
+
+  .custom-header h1 {
+    font-size: 18px;
+  }
+
+  .custom-header .links {
+    gap: 8px;
+  }
+
+  .custom-header .links a {
+    padding: 5px 10px;
+    font-size: 12.5px;
+  }
+
+  .swagger-ui .wrapper {
+    max-width: 960px;
+    padding: 0 16px;
+  }
+
+  .swagger-ui .info {
+    margin: 22px 0;
+  }
+
+  .swagger-ui .info .title {
+    font-size: 24px;
+  }
+
+  .swagger-ui .opblock-tag {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .custom-header {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .custom-header h1 {
+    font-size: 17px;
+  }
+
+  .custom-header .links a {
+    font-size: 12px;
+    padding: 5px 9px;
+  }
+
+  .swagger-ui .wrapper {
+    max-width: 720px;
+    padding: 0 14px;
+  }
+
+  .swagger-ui .info {
+    margin: 18px 0;
+  }
+
+  .swagger-ui .info .title {
+    font-size: 22px;
+  }
+
+  .swagger-ui .opblock .opblock-summary {
+    gap: 8px;
+    padding: 8px 10px;
+  }
+
+  .swagger-ui .opblock .opblock-summary-method {
+    min-width: 64px;
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+
+  .swagger-ui .opblock .opblock-summary-path {
+    font-size: 13px;
+  }
+
+  .swagger-ui .opblock .opblock-summary-description {
+    flex-basis: 100%;
+    margin-top: 2px;
+    font-size: 12.5px;
+  }
+
+  .swagger-ui .dialog-ux .modal-ux {
+    width: calc(100vw - 24px) !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .custom-header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .custom-header h1 {
+    font-size: 16px;
+    justify-content: space-between;
+  }
+
+  .custom-header .links {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .custom-header .links a {
+    justify-content: center;
+    text-align: center;
+    font-size: 11.5px;
+    padding: 6px 8px;
+  }
+
+  .custom-header .links a:nth-child(3) {
+    grid-column: span 2;
+  }
+
+  .swagger-ui .wrapper {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .swagger-ui .info {
+    margin: 14px 0;
+  }
+
+  .swagger-ui .info .title {
+    font-size: 20px;
+  }
+
+  .swagger-ui .opblock-tag {
+    font-size: 17px;
+  }
+
+  .swagger-ui .opblock .opblock-summary {
+    padding: 7px 8px;
+  }
+
+  .swagger-ui .filter-container .operation-filter-input {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 375.98px) {
+  .custom-header {
+    padding: 10px 12px;
+  }
+
+  .custom-header h1 {
+    font-size: 14.5px;
+    gap: 8px;
+  }
+
+  .custom-header .badge {
+    font-size: 10px;
+    padding: 2px 7px;
+  }
+
+  .custom-header .links {
+    grid-template-columns: 1fr;
+  }
+
+  .custom-header .links a:nth-child(3) {
+    grid-column: auto;
+  }
+
+  .swagger-ui .wrapper {
+    padding: 0 6px;
+  }
+
+  .swagger-ui .info .title {
+    font-size: 18px;
+  }
+
+  .swagger-ui .opblock .opblock-summary-method {
+    min-width: 56px;
+    font-size: 10px;
+    padding: 4px 6px;
+  }
+}
+
+/* An inline-block server select makes the page scroll sideways by a few pixels on phones. */
+.swagger-ui .servers > label select {
+  display: block;
+}
